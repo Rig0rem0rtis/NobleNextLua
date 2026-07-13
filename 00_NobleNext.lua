@@ -45,6 +45,8 @@ local MODULES = {
     "GM.GobTele.NNGobTeleInit",
     "GM.POI.NNPoiInit",
     "GM.POI.NNPoiClient",
+    "GM.CustomNPC.NNCustomNpcInit",
+    "GM.CustomNPC.NNCustomNpcClient",
     "Modules.Housing.NNHousingInit",
     "Modules.AutoMount.NNAutoMountInit",
 }
