@@ -1,4 +1,4 @@
---[[ GM/GobTele/NNGobTeleInit.lua — bootstrap (C++: .gobtele + gossip) ]]
+--[[ GM/GobTele/NNGobTeleInit.lua — bootstrap (C++: .gob tele / .gobject teleport + gossip) ]]
 if not _G.NN_BOOTSTRAP_ACTIVE then return end
 
 local NobleNext = require("NobleNext")
