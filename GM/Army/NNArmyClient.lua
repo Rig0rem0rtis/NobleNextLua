@@ -1,11 +1,14 @@
---[[ GM/Army/NNArmyClient ]]
-if not _G.NN_BOOTSTRAP_ACTIVE then return end
-if package.loaded["GM.Army.NNArmyClient"] then return end
+--[[ GM/Army/NNArmyClient — AIO client (no NN_BOOTSTRAP_ACTIVE gate before AddAddon) ]]
 
 local AIO = AIO or require("AIO")
 if AIO.AddAddon() then
     return
 end
+
+if _G.__NN_ARMY_AIO_CLIENT then
+    return
+end
+_G.__NN_ARMY_AIO_CLIENT = true
 
 local ArmyHandlers = AIO.AddHandlers("ArmyHandlers", {})
 

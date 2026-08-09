@@ -19,6 +19,8 @@ end
 
 local NobleNext = {}
 package.loaded["NobleNext"] = NobleNext
+-- C++ (GobMover NotifyClientTarget) ищет lua_getglobal("NobleNext").
+_G.NobleNext = NobleNext
 
 -- Подпапки NobleNextLua (Core/, GM/, Modules/, …)
 local scriptPath = debug.getinfo(1, "S").source:match("^@(.+)[/\\][^/\\]+$") or "."
@@ -52,9 +54,9 @@ NobleNext.Events = {
 NobleNext.AIO = AIO or require("AIO")
 
 -- C++ .movego → AIO (Custom/NobleNext/GobMover)
-function NobleNext.GobMoverSetTarget(player, guid, name)
+function NobleNext.GobMoverSetTarget(player, guid, name, serverPhaseId)
     if not player or not NobleNext.AIO then return end
-    NobleNext.AIO.Handle(player, "NN_GobMover", "SetTarget", guid or 0, name or "")
+    NobleNext.AIO.Handle(player, "NN_GobMover", "SetTarget", guid or 0, name or "", serverPhaseId or 0)
 end
 
 -- ---------------------------------------------------------------------------
