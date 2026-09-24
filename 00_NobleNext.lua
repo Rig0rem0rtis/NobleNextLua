@@ -49,6 +49,7 @@ local MODULES = {
     "GM.CustomNPC.NNCustomNpcClient",
     "Modules.Housing.NNHousingInit",
     "Modules.AutoMount.NNAutoMountInit",
+	"Modules.3d6.3d6_distance_tracker_aura"
 }
 
 _G.NN_BOOTSTRAP_ACTIVE = true
